@@ -1,10 +1,9 @@
-class SquareCube{
-	public static void main(String [] args){
-		int no=12;
-		int s = no*no;
-		int c = no*no*no;
-		
-		System.out.println("Square = " + s);
-		System.out.println("Cube = " + c);
+
+public class SquareCube {
+	public static void main(String [] args) {
+		int no=6;
+		System.out.println("The number is : " + no);
+		System.out.println("The square is : "+ no*no);
+		System.out.println("The cube is : "+ no*no*no);	
 	}
 }

@@ -1,39 +1,40 @@
-// Reverse number
-// Palindrome
-// Armstrong
-// factorial
-// prime number
-// Fibonacci series
+// dynamically typed language : no=8
+// statically typed language : int no=8;
 import java.util.Scanner;
 
 class Armstrong{
-	public static void check(int no){
-		int temp=no;
-		int d,sum=0;
+	public void accept(){
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter any number ");
+		int no = sc.nextInt();
+		checkArmstrong(no);
+	}
 
-		// no     d     sum
-		// 0      1     153
+	// Method prototype
+	void checkArmstrong(int no){
+		// 153  1*1*1 + 5*5*5 + 3*3*3 = 153 
+		// 241  2*2*2 + 4*4*4 + 1*1*1 = 8+64+1 = 73
+		// 370  27+ 343+ 0 = 370
+		// 0  27+343+1 = 371 
+		int sum = 0 ;
+		int org = no;
+		int d;
 		while(no>0){
-			d = no%10;
-			sum = sum+ d*d*d;
+			d = no % 10 ;
+                        sum = sum + d*d*d;
 			no = no/10;
-		} 
-		if(sum==temp){
-			System.out.println("Armstrong");
+		}
+		System.out.print("Sum of cubes of every digit = " + sum);
+		if(sum == org){
+			System.out.print("The number "+ org + " is Armstrong");
 		}
 		else{
-			System.out.println("Not Armstrong");
+			System.out.println("The number " + org + " is not Armstrong ");
 		}
 	}
-	public static void main(String [] args){
-		// 153   1*1*1 + 5*5*5 + 3*3*3 = 1+ 125+ 27=153
-		// If the summation of cubes of every digit is same as that number
-		// then it is called as Armstrong
-
-		int no;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter any number ");
-		no=sc.nextInt();
-		check(no);
+	public static void main(String [] c){
+		// Create an instance of class
+		Armstrong a1 = new Armstrong();
+		a1.accept();
 	}
 }
